@@ -16,10 +16,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-main {
-  display:flex;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -41,7 +37,13 @@ header nav ul li {
   justify-content: space-between;
   align-items: center;
 }
-.main-content {
+
+main {
+  display:flex;
+  flex-direction: row;
+}
+
+.Main-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -49,6 +51,11 @@ header nav ul li {
 }
 
 .section-search {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background: #fff;
   border: 5px solid #ccc;
   border-radius: 10px;
@@ -58,8 +65,51 @@ header nav ul li {
 }
 
 .search-column {
-  background: rgb(139, 138, 138);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgb(230, 252, 255);
   border: 5px solid #ccc;
+  border-radius: 10px;
+}
+
+.search-column button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.search-column h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.search-column p {
+  margin: 5px 0 15px 0;
+}
+
+.form-input {
+  border: 1px solid var(--secondary-color);
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 15px; 
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.75);
+}
+
+.form-input label {
+  margin: 0 5px;
+}
+
+.form-input button {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
   border-radius: 10px;
 }
 
