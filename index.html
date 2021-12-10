@@ -7,58 +7,96 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  <body class="min-100-vh flex-column">
-    <header class="p-5 text-center text-white bg-primary">
-        <h1>Let's Go VACATION</h1>
+  <body>
+    <header>
+        <h1>Let's Go to VACATION</h1>
         <nav>
           <ul>
-            <li>Search</li>
-            <li>Results</li>
-            <li>Terms</li>
+            <li>
+              <a href="#">Search</a>
+            </li>
+            <li>
+              <a href="#">Results</a>
+            </li>
+            <li>
+              <a href="#">Terms</a>
+            </li>
           </ul>
         </nav>
     </header>
     
-    <main class="flex-row justify-center align-center col-auto p-4 bg-light">
+    <main class="Main-Content">
+     
+     
       <!-- Search Results-->
-      <section>
-        <h3>Get Started Today</h3>
-        <p>Fill out this form and one of our trainers will schedule a consult.</p>
-        <form>
-          <label for="name">Your Name</label>
-          <input type="text" placeholder="Your Name" id="name" name="name" class="form-input" />
-          <label for="email">Your Email</label>
-          <input type="email" placeholder="Email Address" id="email" name="email" class="form-input" />
-          <label for="phone">Phone Number</label>
-          <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-          <p>
-            Have you worked out with a trainer before?
-            <span class="radio-wrapper">
-              <input type="radio" name="trainer-confirm" id="trainer-yes" />
-              <label for="trainer-yes">Yes</label>
-            </span>
-            <span class="radio-wrapper">
-              <input type="radio" name="trainer-confirm" id="trainer-no" />
-              <label for="trainer-no">No</label>
-            </span>
-          </p>
-          <p>
-            <span class="checkbox-wrapper">
-              <input type="checkbox" name="checkpoint1" id="checkbox" />
-              <label for="checkbox">I acknowledge that I am at least 18 years of age.</label>
-            </span>
-          </p>
-          <button type="submit">
-            Get running!
-          </button>
-        </form>
+      <section class="section-search">
+        
+        <h3>Find deals</h3>
+        <p>Fill out this form and choose your best matches</p>
+
+        <div class="search-column">
+          <form>
+
+            <label for="destination">Destination</label>
+            <input type="text" placeholder="Destination" id="Destination" name="destination" class="form-input" />
+  
+            <div>
+              <label for="trip-start">Check in Date</label>
+              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <label for="trip-end">Check out Date</label>
+              <input type="date" id="end" name="trip-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+            </div>
+            
+            <div>
+              <label for="quantity-adults">Adults</label>
+              <input type="number" id="quantityAdults" name="quantity-adults" min="1" max="5">
+              <label for="quantity-children">Children</label>
+              <input type="number" id="quantityChildren" name="quantity-children" min="1" max="5">
+            </div>
+  
+            <label for="currency-field">Enter Amount</label>
+            <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00">
+  
+  
+            <button type="submit">
+              Submit Search!
+            </button>
+  
+          </form>
+        </div>
+
+        <div class="search-column" >
+          <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus"
+          frameborder="0" style="border:0" allowfullscreen>
+          </iframe>
+        </div>
       </section>
 
       <!-- Search Results-->
-      <section>
-
+      <section class="search-results">
+        <div class="result-container">
+          <article>
+            <p>result</p>
+          </article>
+          <article>
+            <p>result</p>
+          </article>
+          <article>
+            <p>result</p>
+          </article>
+          <article>
+            <p>result</p>
+          </article>
+        </div>
       </section>
+
     </main>
+
+    <footer>
+
+    </footer>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
