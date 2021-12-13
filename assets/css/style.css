@@ -1,7 +1,9 @@
 :root {
-  --primary-color: #fce138;
-  --secondary-color: #024e76;
-  --tertiary-color: #39a6b2;
+  --primary-color: #eefc74;
+  --secondary-color: #3f87a6;
+  --tertiary-color: #ebf8e1;
+  --headerFont: 'Bebas Neue', cursive;
+  --bodyFont: 'Overpass', sans-serif;
 }
 
 * {
@@ -17,112 +19,18 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(81, 255, 0);
+  background: linear-gradient(0.7turn, var(--secondary-color), var(--tertiary-color), var(--primary-color));
 }
 
-header h1, header nav ul a {
-  color: rgb(0, 0, 0);
-  list-style: none; 
-  padding: 1vw;
-  text-decoration: none;
+header h1 {
+  font-family: var(--headerFont);
+  font-weight:lighter;
+  font-size: 3vw;
 }
 
-header nav ul li {
+header nav{
   display:inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
-main {
-  display:flex;
-  flex-direction: row;
-}
-
-.Main-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.section-search {
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background: #fff;
-  border: 5px solid #ccc;
-  border-radius: 10px;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 700px;
-}
-
-.search-column {
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  background: rgb(230, 252, 255);
-  border: 5px solid #ccc;
-  border-radius: 10px;
-}
-
-.search-column button:hover {
-  background-color: var(--tertiary-color);
-}
-
-.search-column h3 {
-  font-size: 24px;
-  margin: 0;
-}
-
-.search-column p {
-  margin: 5px 0 15px 0;
-}
-
-.form-input {
-  border: 1px solid var(--secondary-color);
-  display: block;
-  padding: 7px 15px;
-  font-size: 16px;
-  color: var(--secondary-color);
-  width: 100%;
-  margin-bottom: 15px; 
-  border-radius: 10px;
-  background-color: rgba(255,255,255, 0.75);
-}
-
-.form-input label {
-  margin: 0 5px;
-}
-
-.form-input button {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-}
-
-.search-results {
-  background: #fff;
-  border: 5px solid #ccc;
-  border-radius: 10px;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 700px;
-  width: 50%;
-}
-
-
-
-
