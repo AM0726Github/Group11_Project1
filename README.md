@@ -1,2 +1,2 @@
-# Group11_Project1
+# Group_Project Vacation Web Application
 
