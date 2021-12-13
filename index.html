@@ -9,7 +9,10 @@
     <link rel="icon" href="./assets/Images/plane-departure-solid.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/b063f503b1.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -51,7 +54,7 @@
                 Login
               </button>
             </p>
-            <a>Sighn up</a>
+            <a>Sign up</a>
           </div>
 
         </div>
@@ -79,7 +82,23 @@
     
                 <label for="destination">Destination</label>
                 <input type="text" placeholder="Destination" id="Destination" name="destination" class="form-input" />
-      
+
+                <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-lg-3 bg-light">
+                          <h5 class="mt-1">Check Weather:</h5>
+                          <div class="input-group mb-3">
+                              <input id="enter-city" type="text" class=" form-control" placeholder="Enter a city" aria-label="Enter a city">
+                              <div class="input-group-append">
+                                  <button class="btn btn-primary" type="button" id="search-button">Search
+                                      
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
                 <div>
                   <label for="trip-start">Check in Date</label>
                   <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
@@ -130,6 +149,21 @@
               </article>
             </div>
           </section>
+
+          <div class="col-lg-9">
+            <div class="row mr-0">
+                <div class="col-lg-11 card m-3 d-none" id="today-weather">
+                    <div class="card-body">
+                        <h3 id="city-name" class="city-name align-middle"></h3>
+                        <img id="current-pic" alt="">
+                        <p id="temperature"></p>
+                        <p id="humidity"></p>
+                        <p id="wind-speed"></p>
+                        <p id="UV-index"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     
         </main>
     
@@ -138,6 +172,7 @@
         </footer>
       </div>
     </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
