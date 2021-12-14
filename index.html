@@ -76,16 +76,22 @@
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p>Leaving from</p>
+                  <p> From/Date</p>
                 </div>
-                <input class="input is-warning" type="text" placeholder="Current City">
+                <input class="input is-rounded is-small is-warning" type="text" placeholder="Current City">
+
+                <input class="input is-rounded is-small is-warning mt-1" type="date" id="Leaving date" name="Leaving">
+
               </div>
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p>Going to</p>
+                  <p>To/Date</p>
                 </div>
-                <input class="input is-warning" type="text" placeholder="Destination City">
+                <input class="input is-rounded is-small is-warning" type="text" placeholder="Destination City">
+
+                <input class="input is-rounded is-small is-warning mt-1" type="date" id="Leaving date" name="Leaving">
+
               </div>
 
               <div class="is-flex is-flex-direction-row is-justify-content-space-between is-align-content-center m-2">
@@ -95,7 +101,7 @@
                     <p>Adults</p>
                   </div>
                   
-                  <div class="select">
+                  <div class="select is-rounded is-small is-warning">
                     <select>
                       <option>1</option>
                       <option>2</option>
@@ -113,7 +119,7 @@
                     <p>Children</p>
                   </div>
               
-                  <div class="select">
+                  <div class="select is-rounded is-small is-warning">
                     <select>
                       <option>1</option>
                       <option>2</option>
@@ -129,7 +135,7 @@
               </div>
 
               <div class="buttons m-2">
-                <button class="button is-info is-rounded">Search</button>
+                <button class="button is-outlined is-rounded is-warning">Search</button>
               </div>
 
             </div>
@@ -167,6 +173,7 @@
         </p>
       </div>
     </footer>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
