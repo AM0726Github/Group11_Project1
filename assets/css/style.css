@@ -2,8 +2,10 @@
   --primary-color: #eefc74;
   --secondary-color: #3f87a6;
   --tertiary-color: #ebf8e1;
+  --forthCollor: #e5f2fd;
   --headerFont: 'Bebas Neue', cursive;
   --bodyFont: 'Overpass', sans-serif;
+  --SecondarryFont: 'Rubik', sans-serif;
 }
 
 * {
@@ -16,6 +18,7 @@ body {
   margin: 0;
   color: rgb(0, 0, 0);
   font-family: Helvetica, Arial, sans-serif;
+  background: linear-gradient( var(--tertiary-color), var(--forthCollor));
 }
 
 header {
@@ -28,9 +31,25 @@ header h1 {
   font-size: 3vw;
 }
 
-header nav{
-  display:inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+section {
+  font-family: var(--SecondarryFont);
+}
+
+.Search-header {
+  font-size: 1.5vw;
+}
+
+.section-search {
   align-items: center;
+  margin: 2vw 0;
+  border-radius: 0.5vw;
+  background-color: white;
+}
+
+hr {
+  margin: 0 auto;
+}
+
+.Main-Content {
+
 }
