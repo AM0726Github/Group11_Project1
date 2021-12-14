@@ -5,6 +5,7 @@
   --forthCollor: #e5f2fd;
   --headerFont: 'Bebas Neue', cursive;
   --bodyFont: 'Overpass', sans-serif;
+  --SecondarryFont: 'Rubik', sans-serif;
 }
 
 * {
@@ -30,8 +31,25 @@ header h1 {
   font-size: 3vw;
 }
 
+section {
+  font-family: var(--SecondarryFont);
+}
+
+.Search-header {
+  font-size: 1.5vw;
+}
+
 .section-search {
-  width: 80%;
+  align-items: center;
+  margin: 2vw 0;
   border-radius: 0.5vw;
   background-color: white;
+}
+
+hr {
+  margin: 0 auto;
+}
+
+.Main-Content {
+
 }
