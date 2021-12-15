@@ -76,24 +76,24 @@
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p> From/Date</p>
+                  <p> From/CheckIn Date</p>
                 </div>
 
                 <div class="is-flex is-flex-direction-row is-align-self-center">
-                  <input class="input is-rounded is-small is-warning" type="text" placeholder="Current City">
-                  <input class="input is-rounded is-small is-warning ml-1" type="date" id="Leaving date" name="Leaving">
+                  <input class="input is-rounded is-small is-warning" id="CurrentCity" type="text" placeholder="Current City">
+                  <input class="input is-rounded is-small is-warning ml-1" id="LeavingDate" type="date" name="Leaving">
                 </div>
 
               </div>
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p>To/Date</p>
+                  <p>To/Checkout Date</p>
                 </div>
 
                 <div class="is-flex is-flex-direction-row is-align-self-center">
-                  <input class="input is-rounded is-small is-warning" type="text" placeholder="Destination City">
-                  <input class="input is-rounded is-small is-warning ml-1" type="date" id="Leaving date" name="Leaving">
+                  <input class="input is-rounded is-small is-warning" id="DestinationCity" type="text" placeholder="Destination City">
+                  <input class="input is-rounded is-small is-warning ml-1" id="BookingDate" type="date" name="Leaving">
                 </div>
 
               </div>
@@ -106,7 +106,7 @@
                   </div>
                   
                   <div class="select is-rounded is-small is-warning">
-                    <select>
+                    <select id="adultCount">
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -124,7 +124,7 @@
                   </div>
               
                   <div class="select is-rounded is-small is-warning">
-                    <select>
+                    <select id="ChildCount">
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -139,7 +139,7 @@
               </div>
 
               <div class="buttons m-2">
-                <button class="button is-outlined is-rounded is-warning">Search</button>
+                <button class="button is-outlined is-rounded is-warning" id="SearchButton">Search</button>
               </div>
 
             </div>
@@ -159,19 +159,19 @@
               <div class="column is-one-third">
                 <article class="result-item m-1">
                 
-                  <div class="card">
+                  <div class="card" id="ResultCard">
                     <header class="card-header">
-                      <p class="card-header-title">
+                      <p class="card-header-title" id="CardHeaderParagraff">
                         Hotel name
                       </p>
                       <button class="card-header-icon" aria-label="more options">
                         <span class="reviews">
-                          <a href="#">#rewievs</a>
+                          <a id="ReviewsAnchor" href="#">#rewievs</a>
                         </span>
                       </button>
                     </header>
                     <div class="card-content">
-                      <div class="content">
+                      <div class="content" id="HotelContent">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                         <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
                         <br>
@@ -179,157 +179,7 @@
                       </div>
                     </div>
                     <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
-                    </footer>
-                  </div>
-  
-                </article>
-              </div>
-
-              <div class="column is-one-third">
-                <article class="result-item m-1">
-                
-                  <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Hotel name
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="reviews">
-                          <a href="#">#rewievs</a>
-                        </span>
-                      </button>
-                    </header>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
-                    </footer>
-                  </div>
-  
-                </article>
-              </div>
-
-              <div class="column is-one-third">
-                <article class="result-item m-1">
-                
-                  <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Hotel name
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="reviews">
-                          <a href="#">#rewievs</a>
-                        </span>
-                      </button>
-                    </header>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
-                    </footer>
-                  </div>
-  
-                </article>
-              </div>
-
-              <div class="column is-one-third">
-                <article class="result-item m-1">
-                
-                  <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Hotel name
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="reviews">
-                          <a href="#">#rewievs</a>
-                        </span>
-                      </button>
-                    </header>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
-                    </footer>
-                  </div>
-  
-                </article>
-              </div>
-
-              <div class="column is-one-third">
-                <article class="result-item m-1">
-                
-                  <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Hotel name
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="reviews">
-                          <a href="#">#rewievs</a>
-                        </span>
-                      </button>
-                    </header>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
-                    </footer>
-                  </div>
-  
-                </article>
-              </div>
-
-              <div class="column is-one-third">
-                <article class="result-item m-1">
-                
-                  <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Hotel name
-                      </p>
-                      <button class="card-header-icon" aria-label="more options">
-                        <span class="reviews">
-                          <a href="#">#rewievs</a>
-                        </span>
-                      </button>
-                    </header>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Go To website</a>
+                      <a href="#" class="card-footer-item" id="HotelWeb">Go To website</a>
                     </footer>
                   </div>
   
