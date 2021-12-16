@@ -1,6 +1,6 @@
 :root {
   --primary-color: #eefc74;
-  --secondary-color: #3f87a6;
+  --secondary-color: #3d7eaa;
   --tertiary-color: #ebf8e1;
   --forthCollor: #e5f2fd;
   --headerFont: 'Bebas Neue', cursive;
@@ -25,6 +25,12 @@ header {
   background: linear-gradient(0.7turn, var(--secondary-color), var(--tertiary-color), var(--primary-color));
 }
 
+footer {
+  background: linear-gradient(0.7turn, var(--secondary-color), var(--tertiary-color), var(--primary-color));
+  font-size: 1.1vw;
+
+}
+
 #PageHeader {
   position: sticky;
   top: 0;
@@ -37,11 +43,16 @@ header h1 {
   font-size: 3vw;
 }
 
+body {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
 section {
   font-family: var(--SecondarryFont);
 }
 
 .section-search {
+ 
   align-items: center;
   margin: 2vw 0;
   border-radius: 0.5vw;
