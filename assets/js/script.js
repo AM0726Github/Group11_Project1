@@ -64,7 +64,9 @@ function getCityDestination() {
 //get  destination city hotels by using rapid api hotels
 function getApiHotelsData(city) {
         
-    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=25&checkIn=2020-01-08&checkOut=2020-01-15&adults1=" + Adult.value + "&children1=" + Children.value + "&sortOrder=PRICE&locale=en_US&currency=USD", {
+    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=25&checkIn=" 
+            + LeavingDate.value + "&checkOut=" + BookingDate.value + "&adults1=" + Adult.value + "&children1="
+            + Children.value +"&priceMin" + price.value + "&sortOrder=PRICE&locale=" + curr + "&currency=" + loc, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "hotels4.p.rapidapi.com",
