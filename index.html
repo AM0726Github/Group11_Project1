@@ -26,7 +26,7 @@
           <div class="is-flex-wrap-wrap">
             <div class=" field m-2">
               <p class="control has-icons-left has-icons-right">
-                <input class="input" type="email" placeholder="Email">
+                <input class="input is-small" type="email" placeholder="Email">
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -38,7 +38,7 @@
   
             <div class="field m-2">
               <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input class="input is-small" type="password" placeholder="Password">
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
@@ -48,7 +48,7 @@
 
           <div class="field is-flex is-flex-direction-column is-align-items-center">
             <p class="control is-flex-wrap-wrap">
-              <button class="button is-medium is-warning m-2">
+              <button class="button is-small is-warning m-2">
                 Login
               </button>
             </p>
@@ -68,7 +68,7 @@
           <section class="section-search is-flex-direction-column is-align-self-center">
             
             <div class="Search-header">
-              <h1 class="m-2">Search vacation packages</h1>
+              <h1 class="m-2">Search vacation packages!</h1>
               <hr>
             </div>
             
@@ -76,23 +76,43 @@
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p> From/CheckIn Date</p>
+                  <p>Moving To</p>
                 </div>
 
                 <div class="is-flex is-flex-direction-row is-align-self-center">
-                  <input class="input is-rounded is-small is-warning" id="CurrentCity" type="text" placeholder="Current City">
-                  <input class="input is-rounded is-small is-warning ml-1" id="LeavingDate" type="date" name="Leaving">
+                  <input class="input is-rounded is-small is-warning" id="DestinationCity" type="text" placeholder="Destination City">
                 </div>
 
               </div>
 
               <div class="is-flex is-flex-direction-column is-align-self-center m-2">
                 <div class="is-flex is-flex-direction-column is-align-self-center">
-                  <p>To/Checkout Date</p>
+                  <p>Price</p>
+                </div>
+
+                <div class="field has-addons">
+                  <p class="control">
+                    <span class="select is-rounded is-small is-warning">
+                      <select>
+                        <option>$</option>
+                        <option>£</option>
+                        <option>€</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="control">
+                    <input class="input is-rounded is-small is-warning" type="text" placeholder="Amount of money">
+                  </p>
+                </div>
+              </div>
+
+              <div class="is-flex is-flex-direction-column is-align-self-center m-2">
+                <div class="is-flex is-flex-direction-column is-align-self-center">
+                  <p>CheckIn Date/Checkout Date</p>
                 </div>
 
                 <div class="is-flex is-flex-direction-row is-align-self-center">
-                  <input class="input is-rounded is-small is-warning" id="DestinationCity" type="text" placeholder="Destination City">
+                  <input class="input is-rounded is-small is-warning ml-1" id="LeavingDate" type="date" name="Leaving">
                   <input class="input is-rounded is-small is-warning ml-1" id="BookingDate" type="date" name="Leaving">
                 </div>
 
@@ -153,6 +173,18 @@
               <h1 class="m-2">Vacation packages!</h1>
               <hr>
             </div>
+
+            <nav class="pagination is-small m-1" role="navigation" aria-label="pagination">
+              <a class="pagination-previous">Previous</a>
+              <a class="pagination-next">Next page</a>
+              <ul class="pagination-list">
+                <li><a class="pagination-link is-current" aria-label="Goto page 1">1</a></li>
+                <li><a class="pagination-link" aria-label="Goto page 45">2</a></li>
+                <li><a class="pagination-link" aria-label="Page 46" aria-current="page">3</a></li>
+                <li><a class="pagination-link" aria-label="Goto page 47">4</a></li>
+                <li><a class="pagination-link" aria-label="Goto page 86">5</a></li>
+              </ul>
+            </nav>
            
             <div class="column is-flex is-flex-direction-row is-align-content-center is-flex-wrap-wrap">
 
