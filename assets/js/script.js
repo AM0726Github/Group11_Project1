@@ -16,29 +16,42 @@ var HotelName = document.getElementById('CardHeaderParagraff');
 var ReviewsLink = document.getElementById('ReviewsAnchor');
 var HotelcontentContanier = document.getElementById('HotelContent');
 var HotelWebLink = document.getElementById('HotelWeb');
+var resultCount = 0;
+var photoUrl = "../Images/notFound.png";
+var HottelIDs = [];
+var hottels = [
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
+    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' }
+]
 
 // curency & local variables
 var curr = 'en_US';
 var loc = 'USD';
-// parse Currency by Api format
-function checkCurrency(curr,loc) {
-    
-    if(currency.value === '$'){
-        curr = 'en_US';
-        loc = 'USD';
-    } else if(currency.value === '€'){
-        curr = 'de-DE';
-        loc = 'EUR';
-    };
-};
-
-
 
 // Get destination city id from rapid api
 function getCityDestination() {
     
-    checkCurrency(curr,loc);
-
+    // parse Currency by Api format
+    if(currency.value != "$"){
+        curr = 'de-DE';
+        loc = 'EUR';
+    } else {
+        curr = 'en_US';
+        loc = 'USD';
+    }
 
     fetch("https://hotels4.p.rapidapi.com/locations/v2/search?query=" + DestinationCity.value + "&locale=" + curr + "&currency=" + loc, {
         "method": "GET",
@@ -51,20 +64,59 @@ function getCityDestination() {
         if (response.ok) {
             response.json()
             .then(function (data){
-        
+                
             var city = data.suggestions[0].entities[0].destinationId;
             
             getApiHotelsData(city);
+
             });
         };
 
     });
+
 };
+
+var hotelID = '';
+
+//get hottel picture
+function getHottelPicture(hotelID) {
+
+    var Url = "../Images/notFound.png";
+
+    fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=" + hotelID, {
+                        "method": "GET",
+                        "headers": {
+                            "x-rapidapi-host": "hotels4.p.rapidapi.com",
+                            "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
+                        }
+                    })
+                    .then(function(response) {
+                            if (response.ok) {
+                                response.json()
+                                .then(function (data) {
+                                
+                                    
+                                    // return data.
+                                    var sufixx = data.hotelImages[0].sizes[0].suffix;
+                                    var baseurl = data.hotelImages[0].baseUrl;
+                                    
+                                
+                                    // creating working URL
+                                    baseurl = baseurl.substring(0,baseurl.length-10);
+                                    Url = baseurl + sufixx + ".jpg";
+                                });
+
+                            };
+                    });
+    return Url;
+};
+
+
 
 //get  destination city hotels by using rapid api hotels
 function getApiHotelsData(city) {
         
-    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=25&checkIn=" 
+    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=" + 15 + "&checkIn=" 
             + LeavingDate.value + "&checkOut=" + BookingDate.value + "&adults1=" + Adult.value + "&children1="
             + Children.value +"&priceMin" + price.value + "&sortOrder=PRICE&locale=" + curr + "&currency=" + loc, {
             "method": "GET",
@@ -77,21 +129,31 @@ function getApiHotelsData(city) {
             if (response.ok) {
                 response.json()
                 .then(function (data) {
-                    console.log(data);
-        
-                    for(var i=0; i<20; ++i ){
-                        console.log("Hotel Name  " + data.data.body.searchResults.results[i].name);
-                        console.log("Hotel ID  " + data.data.body.searchResults.results[i].id);
-                        console.log("Hotel Raiting  " + data.data.body.searchResults.results[i].guestReviews.rating);
-                        console.log("Hotel Address  " + data.data.body.searchResults.results[i].address.streetAddress);
-                        console.log("Hotel Coordinates Lat: " + data.data.body.searchResults.results[i].coordinate.lat + " Lon: " + data.data.body.searchResults.results[i].coordinate.lon);
                     
-                    };
+                    resultCount = data.data.body.searchResults.results.length;
         
+                    for(var i=0; i < resultCount; ++i ){
+
+                        hottels[i].id = data.data.body.searchResults.results[i].id;
+                        hottels[i].name = data.data.body.searchResults.results[i].name;
+                        hottels[i].raiting = data.data.body.searchResults.results[i].guestReviews.rating;
+                        hottels[i].address = data.data.body.searchResults.results[i].address.streetAddress;
+                        hottels[i].lat = data.data.body.searchResults.results[i].coordinate.lat;
+                        hottels[i].lon = data.data.body.searchResults.results[i].coordinate.lon;
+                        hottels[i].photo = getHottelPicture(hottels[i].id);
+                        
+                    };
+
+                    for(var i=0; i < resultCount; ++i ){
+                        console.log(hottels[i]);
+                    }
 
                 });   
             };
         });
+
 };
+
+
 
 buttonSearch.addEventListener('click', getCityDestination);
