@@ -1,10 +1,11 @@
 // Search Parameter variables
-var CurrentCity = document.getElementById('CurrentCity');
 var LeavingDate = document.getElementById('LeavingDate');
 var DestinationCity = document.getElementById('DestinationCity');
 var BookingDate = document.getElementById('BookingDate');
 var Adult = document.getElementById('adultCount');
 var Children = document.getElementById('ChildCount');
+var currency = document.getElementById('curency');
+var price = document.getElementById('price');
 
 // search button variable
 var buttonSearch = document.getElementById('SearchButton');
@@ -16,12 +17,30 @@ var ReviewsLink = document.getElementById('ReviewsAnchor');
 var HotelcontentContanier = document.getElementById('HotelContent');
 var HotelWebLink = document.getElementById('HotelWeb');
 
+// curency & local variables
+var curr = 'en_US';
+var loc = 'USD';
+// parse Currency by Api format
+function checkCurrency(curr,loc) {
+    
+    if(currency.value === '$'){
+        curr = 'en_US';
+        loc = 'USD';
+    } else if(currency.value === '€'){
+        curr = 'de-DE';
+        loc = 'EUR';
+    };
+};
+
 
 
 // Get destination city id from rapid api
 function getCityDestination() {
     
-    fetch("https://hotels4.p.rapidapi.com/locations/v2/search?query=" + DestinationCity.value + "&locale=en_US&currency=USD", {
+    checkCurrency(curr,loc);
+
+
+    fetch("https://hotels4.p.rapidapi.com/locations/v2/search?query=" + DestinationCity.value + "&locale=" + curr + "&currency=" + loc, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "hotels4.p.rapidapi.com",
