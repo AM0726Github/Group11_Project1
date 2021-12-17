@@ -140,13 +140,16 @@ function getApiHotelsData(city) {
                         hottels[i].address = data.data.body.searchResults.results[i].address.streetAddress;
                         hottels[i].lat = data.data.body.searchResults.results[i].coordinate.lat;
                         hottels[i].lon = data.data.body.searchResults.results[i].coordinate.lon;
-                        hottels[i].photo = getHottelPicture(hottels[i].id);
+                        hottels[i].photo = photoUrl;
+                        console.log(hottels[i]);
                         
                     };
 
-                    for(var i=0; i < resultCount; ++i ){
-                        console.log(hottels[i]);
-                    }
+                    // for(var i=0; i < resultCount; setInterval(++i,10)){
+                        
+                    //     hottels[i].photo = getHottelPicture(hottels[i].id);
+                    //     console.log(hottels[i]);
+                    // }
 
                 });   
             };
