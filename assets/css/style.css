@@ -90,3 +90,41 @@ hr {
 
 }
 
+  @media screen and (max-width:320px){
+    
+    header h1, .Search-header h1, .Results-header h1{
+      font-size: 5vw;
+      margin: 0.2rem!important ;
+    }
+
+    .is-flex-direction-row { 
+      display: flex !important;;
+      flex-direction: column !important;
+      justify-content: center !important;
+   }
+
+    #HeaderDiv {
+      flex-direction: row !important;
+    }
+
+    #WhereInput, #price  {
+      flex-direction: row !important;
+    }
+
+    #WhereInput input, #price input {
+      
+    }
+    
+    #CheckCheck {
+      flex-direction: row !important;
+    }
+
+    #CheckCheck input {
+      width: 80px !important;
+    }
+
+    
+
+
+
+  }
