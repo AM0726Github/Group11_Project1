@@ -69,10 +69,15 @@ function getCityDestination() {
             
             getApiHotelsData(city);
 
-            });
-        };
+            for(var i=0; i < hottels.length; ++i ){
 
-    });
+                hottels[i].photo = getHottelPicture(hottels[i].id);
+                console.log(hottels[i]);
+        
+
+            };
+            
+        });
 
 };
 
@@ -83,13 +88,13 @@ function getHottelPicture(hotelID) {
 
     var Url = "../Images/notFound.png";
 
-    fetch("https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=" + hotelID, {
-                        "method": "GET",
-                        "headers": {
-                            "x-rapidapi-host": "hotels4.p.rapidapi.com",
-                            "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
-                        }
-                    })
+    fetch("https://hotels-com-provider.p.rapidapi.com/v1/hotels/photos?hotel_id=" + hotelID, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
+            "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
+        }
+    })
                     .then(function(response) {
                             if (response.ok) {
                                 response.json()
@@ -149,12 +154,6 @@ function getApiHotelsData(city) {
 
             };   
         });
-    
-    for(var i=0; i < resultCount; ++i ){
-        hottels[i].photo = getHottelPicture(hottels[i].id);
-        console.log(hottels[i]);
-    }
-
 };
 
 
