@@ -44,7 +44,8 @@ header h1 {
 }
 
 body {
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  /* background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); */
+  background-color: whitesmoke !important;
 }
 
 section {
@@ -90,41 +91,118 @@ hr {
 
 }
 
-  @media screen and (max-width:320px){
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width:575px){
     
-    header h1, .Search-header h1, .Results-header h1{
-      font-size: 5vw;
-      margin: 0.2rem!important ;
-    }
-
-    .is-flex-direction-row { 
-      display: flex !important;;
-      flex-direction: column !important;
-      justify-content: center !important;
-   }
-
-    #HeaderDiv {
-      flex-direction: row !important;
-    }
-
-    #WhereInput, #price  {
-      flex-direction: row !important;
-    }
-
-    #WhereInput input, #price input {
-      
-    }
-    
-    #CheckCheck {
-      flex-direction: row !important;
-    }
-
-    #CheckCheck input {
-      width: 80px !important;
-    }
-
-    
-
-
-
+  header h1, .Search-header h1, .Results-header h1{
+    font-size: 5vw;
+    margin: 0.2rem!important ;
   }
+
+  .is-flex-direction-row { 
+    display: flex !important;;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  #HeaderDiv {
+    flex-direction: row !important;
+  }
+
+  #WhereInput, #price  {
+    flex-direction: row !important;
+  }
+
+  #WhereInput input {
+    width: 120px;
+    height: 35px;
+    margin-left: 10px;
+  }
+  
+  #price input {
+    width: 120px;
+    height: 35px;
+  }
+
+  #CheckCheck {
+    flex-direction: row !important;
+  }
+
+  #CheckCheck input {
+    height: 35px;
+    width: 80px;
+  }
+
+  #curency {
+    height: 35px;
+    margin-left: 10px;
+  }
+
+  #Adult-Children {
+    flex-direction: row !important;
+  }
+
+  #SearchButton {
+    justify-content: center !important;
+  }
+
+  .buttons {
+    justify-content: center !important;
+  }
+
+  #Children {
+    margin: 0;
+  }
+
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+
+  #section-search-div {
+    justify-content: space-around !important;
+    flex-wrap: wrap !important;
+  }
+  
+  header h1, .Search-header h1, .Results-header h1{
+    font-size: 3vw;
+    margin: 0.2rem !important;
+  }
+
+  #CheckCheck {
+    flex-direction: row !important;
+  }
+
+  #CheckCheck input {
+    width: 150px;
+  }
+
+  #curency {
+    height: 35px;
+    margin-left: 10px;
+  }
+
+  #WhereInput input {
+    width: 140px;
+    height: 35px;
+    margin-left: 10px;
+  }
+  
+  #price input {
+    width: 120px;
+    height: 35px;
+  }
+
+  #WhereInput, #price  {
+    flex-direction: row !important;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+
+  #CheckCheck {
+    flex-direction: column !important;
+  }
+
+}
