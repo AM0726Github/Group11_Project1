@@ -104,6 +104,7 @@ function getHottelPicture(hotelID) {
                                     // creating working URL
                                     baseurl = baseurl.substring(0,baseurl.length-10);
                                     Url = baseurl + sufixx + ".jpg";
+                                    
                                 });
 
                             };
@@ -141,19 +142,18 @@ function getApiHotelsData(city) {
                         hottels[i].lat = data.data.body.searchResults.results[i].coordinate.lat;
                         hottels[i].lon = data.data.body.searchResults.results[i].coordinate.lon;
                         hottels[i].photo = photoUrl;
-                        console.log(hottels[i]);
                         
                     };
 
-                    // for(var i=0; i < resultCount; setInterval(++i,10)){
-                        
-                    //     hottels[i].photo = getHottelPicture(hottels[i].id);
-                    //     console.log(hottels[i]);
-                    // }
+                });
 
-                });   
-            };
+            };   
         });
+    
+    for(var i=0; i < resultCount; ++i ){
+        hottels[i].photo = getHottelPicture(hottels[i].id);
+        console.log(hottels[i]);
+    }
 
 };
 
