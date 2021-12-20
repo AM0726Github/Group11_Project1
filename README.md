@@ -79,15 +79,18 @@ Due Date
 * https://github.com/AM0726Github/Group11_Project1
 
 ## This is the HomePage of our Vacation App!
+![page1](https://user-images.githubusercontent.com/37889335/146727559-fda6a77c-246d-451f-9704-06fcf4069a24.PNG)
 
 
 
 ## Entering the Location that you want to visit, price range, and including checkin and checkout date and how many people are going.
 
+![page2](https://user-images.githubusercontent.com/37889335/146727568-1d0357bf-33dd-4bfe-a0fc-39e7deb93fa7.PNG)
 
 
 ## Once Search is Clicked, it will display the Hotel and rating for you to check, and also provide the link to their website!
 
+![page3](https://user-images.githubusercontent.com/37889335/146727572-90d7d051-7984-4662-8a44-a568679f6c49.PNG)
 
 
 
