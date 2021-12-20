@@ -30,12 +30,9 @@ var hottels = [
     { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
     { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
     { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
-    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
-    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
-    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
-    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' },
-    { name:'',id:'',raiting:'',address:'',lat:'',lon:'',photo:'' }
 ]
+
+// 12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532
 
 // curency & local variables
 var curr = 'en_US';
@@ -57,7 +54,7 @@ function getCityDestination() {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "hotels4.p.rapidapi.com",
-            "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
+            "x-rapidapi-key": "afdf47149amsh7cf7cb2b83826cap10ce49jsn137fc79378f3"
         }
     })
     .then(function(response) {
@@ -65,56 +62,51 @@ function getCityDestination() {
             response.json()
             .then(function (data){
                 
-            var city = data.suggestions[0].entities[0].destinationId;
-            
-            getApiHotelsData(city);
+                var city = data.suggestions[0].entities[0].destinationId;
+                getApiHotelsData(city);
 
-            for(var i=0; i < hottels.length; ++i ){
-
-                hottels[i].photo = getHottelPicture(hottels[i].id);
-                console.log(hottels[i]);
-        
-
-            };
-            
-        });
+            });
+        };   
+    });
 
 };
 
 var hotelID = '';
+
+// 363464
 
 //get hottel picture
 function getHottelPicture(hotelID) {
 
     var Url = "../Images/notFound.png";
 
-    fetch("https://hotels-com-provider.p.rapidapi.com/v1/hotels/photos?hotel_id=" + hotelID, {
+    fetch("https://hotels-com-provider.p.rapidapi.com/v1/hotels/photos?hotel_id="+ hotelID, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
-            "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
+            "x-rapidapi-key": "afdf47149amsh7cf7cb2b83826cap10ce49jsn137fc79378f3"
         }
     })
-                    .then(function(response) {
-                            if (response.ok) {
-                                response.json()
-                                .then(function (data) {
-                                
-                                    
-                                    // return data.
-                                    var sufixx = data.hotelImages[0].sizes[0].suffix;
-                                    var baseurl = data.hotelImages[0].baseUrl;
-                                    
-                                
-                                    // creating working URL
-                                    baseurl = baseurl.substring(0,baseurl.length-10);
-                                    Url = baseurl + sufixx + ".jpg";
-                                    
-                                });
+    .then(function(response) {
+        if (response.ok) {
+            response.json()
+            .then(function (data) {
+                
+                // return data.
+                // var sufixx = data.hotelImages[0].sizes[0].suffix;
+                // var baseurl = data.hotelImages[0].baseUrl;
+            
+                // creating working URL
+                // baseurl = baseurl.substring(0,baseurl.length-10);
+                // Url = baseurl + sufixx + ".jpg";
+                console.log(data);
+                return data[0].mainUrl;
+                
+            });
 
-                            };
-                    });
-    return Url;
+        };
+    });                
+    
 };
 
 
@@ -122,13 +114,13 @@ function getHottelPicture(hotelID) {
 //get  destination city hotels by using rapid api hotels
 function getApiHotelsData(city) {
         
-    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=" + 15 + "&checkIn=" 
+    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=" + 1 + "&checkIn=" 
             + LeavingDate.value + "&checkOut=" + BookingDate.value + "&adults1=" + Adult.value + "&children1="
             + Children.value +"&priceMin" + price.value + "&sortOrder=PRICE&locale=" + curr + "&currency=" + loc, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "hotels4.p.rapidapi.com",
-                "x-rapidapi-key": "12dc6e8e9amsh96b553b9eb79259p1cc963jsndb586ba75532"
+                "x-rapidapi-key": "afdf47149amsh7cf7cb2b83826cap10ce49jsn137fc79378f3"
             }
         })
         .then(function(response) {
@@ -146,7 +138,7 @@ function getApiHotelsData(city) {
                         hottels[i].address = data.data.body.searchResults.results[i].address.streetAddress;
                         hottels[i].lat = data.data.body.searchResults.results[i].coordinate.lat;
                         hottels[i].lon = data.data.body.searchResults.results[i].coordinate.lon;
-                        hottels[i].photo = photoUrl;
+                        hottels[i].photo = getHottelPicture(hottels[i].id);
                         
                     };
 
