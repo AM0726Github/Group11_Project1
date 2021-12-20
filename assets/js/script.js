@@ -147,7 +147,7 @@ function getHottelPicture(hotelID) {
 //get  destination city hotels by using rapid api hotels
 function getApiHotelsData(city) {
         
-    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=" + 5 + "&checkIn=" 
+    fetch("https://hotels4.p.rapidapi.com/properties/list?destinationId=" + city + "&pageNumber=1&pageSize=" + 1 + "&checkIn=" 
             + LeavingDate.value + "&checkOut=" + BookingDate.value + "&adults1=" + Adult.value + "&children1="
             + Children.value +"&priceMin" + price.value + "&sortOrder=PRICE&locale=" + curr + "&currency=" + loc, {
             "method": "GET",
