@@ -78,6 +78,9 @@ Due Date
 
 * https://github.com/AM0726Github/Group11_Project1
 
+* Link to Powerpoint: 
+https://docs.google.com/presentation/d/1K-IJcICZQpmEYc_SNABYpExqU4HkkIPbgJ3z0agM94s/edit#slide=id.p
+
 ## This is the HomePage of our Vacation App!
 ![page1](https://user-images.githubusercontent.com/37889335/146727559-fda6a77c-246d-451f-9704-06fcf4069a24.PNG)
 
