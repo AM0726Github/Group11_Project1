@@ -167,7 +167,7 @@ function getApiHotelsData(city) {
 
                         hottels[i].id = data.data.body.searchResults.results[i].id;
                         hottels[i].name = data.data.body.searchResults.results[i].name;
-                        hottels[i].raiting = data.data.body.searchResults.results[i].guestReviews.rating;
+                        hottels[i].raiting = data.data.body.searchResults.results[i].guestReviews.raiting;
                         hottels[i].address = data.data.body.searchResults.results[i].address.streetAddress;
                         hottels[i].lat = data.data.body.searchResults.results[i].coordinate.lat;
                         hottels[i].lon = data.data.body.searchResults.results[i].coordinate.lon;
